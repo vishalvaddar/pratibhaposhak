@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Dashboard from './pages/Dashboard';
 import ViewApplications from './pages/ViewApplications';
-import BulkUpload from './pages/BulkUpload';
+import BulkUpload from './pages/BulkUpload'; // Import your BulkUploadPage component
 import Shortlisting from './pages/Shortlisting';
 import ScreeningTests from './pages/ScreeningTests';
 import ResultsManagement from './pages/ResultsManagement';
@@ -18,12 +18,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header/>
-        <Navbar/>
+        <Header />
+        <Navbar />
         <Routes>
           <Route path="/" exact element={<Dashboard />} />
           <Route path="/view-applications" element={<ViewApplications />} />
-          <Route path="/bulk-upload" element={<BulkUpload />} />
+          <Route path="/bulk-upload" element={<BulkUpload />} /> {/* Updated to use BulkUpload */}
           <Route path="/shortlisting" element={<Shortlisting />} />
           <Route path="/screening-tests" element={<ScreeningTests />} />
           <Route path="/results-management" element={<ResultsManagement />} />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/help-support" element={<HelpSupport />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );

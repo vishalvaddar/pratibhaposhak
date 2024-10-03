@@ -1,8 +1,5 @@
-// server/index.js
-
 const express = require('express');
 const cors = require('cors');
-const userRoutes = require('./routes/users');
 require('dotenv').config();
 
 const app = express();
@@ -15,7 +12,12 @@ app.use(express.json());
 // Routes
 app.use('/api/users', userRoutes);
 
+// Define a route for the root URL
+app.get('/', (req, res) => {
+    res.send('Welcome to the API!'); // Replace this with a more meaningful response
+});
+
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
