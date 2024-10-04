@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Dashboard = () => {
+  // Another change
   return (
     <div>
       <h1>Dashboard</h1>
