@@ -5,7 +5,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Dashboard from './pages/Dashboard';
 import ViewApplications from './pages/ViewApplications';
-import BulkUpload from './pages/BulkUpload'; // Import your BulkUploadPage component
+import UploadApplications from './pages/UploadApplications';
+import BulkUploadApplications from './pages/BulkUploadApplications'; // Import your BulkUploadPage component
+import NewApplication from './pages/NewApplication';
 import Shortlisting from './pages/Shortlisting';
 import ScreeningTests from './pages/ScreeningTests';
 import ResultsManagement from './pages/ResultsManagement';
@@ -23,7 +25,9 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Dashboard />} />
           <Route path="/view-applications" element={<ViewApplications />} />
-          <Route path="/bulk-upload" element={<BulkUpload />} /> {/* Updated to use BulkUpload */}
+          <Route path="/upload-applications" element={<UploadApplications />} />
+          <Route path="/bulk-upload-applications" element={<BulkUploadApplications />} /> {/* Updated to use BulkUpload */}
+          <Route path='/new-application' element={<NewApplication />} />
           <Route path="/shortlisting" element={<Shortlisting />} />
           <Route path="/screening-tests" element={<ScreeningTests />} />
           <Route path="/results-management" element={<ResultsManagement />} />
