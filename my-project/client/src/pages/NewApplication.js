@@ -3,7 +3,6 @@ import './NewApplication.css'; // Ensure this CSS file is imported
 
 const NewApplication = () => {
   const [formData, setFormData] = useState({
-    student_id: '',
     nmms_reg_number: '',
     student_name: '',
     father_name: '',
@@ -32,10 +31,6 @@ const NewApplication = () => {
     <div className="container">
       <h2>New Application</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="student_id">Student ID</label>
-          <input type="text" id="student_id" name="student_id" value={formData.student_id} onChange={handleChange} required />
-        </div>
         <div className="form-group">
           <label htmlFor="nmms_reg_number">NMMS Reg Number</label>
           <input type="text" id="nmms_reg_number" name="nmms_reg_number" value={formData.nmms_reg_number} onChange={handleChange} required />
