@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './NewApplication.css'; // Ensure this CSS file is imported
 
 const NewApplication = () => {
@@ -12,6 +13,7 @@ const NewApplication = () => {
     sat_score: '',
     dob: ''
   });
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,10 +23,26 @@ const NewApplication = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Handle form submission logic here, e.g., sending data to a server
+    try {
+      await axios.post('http://localhost:5000/student', formData);
+      setSubmitSuccess(true);
+
+      // Clear form data after successful submission
+      setFormData({
+        nmms_reg_number: '',
+        student_name: '',
+        father_name: '',
+        gender: '',
+        nmms_year: '',
+        gmat_score: '',
+        sat_score: '',
+        dob: ''
+      });
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+    }
   };
 
   return (
@@ -76,6 +94,8 @@ const NewApplication = () => {
         </div>
         <button type="submit" className="btn btn-success">Submit Application</button>
       </form>
+
+      {submitSuccess && <div className="success-message">Application submitted successfully!</div>}
     </div>
   );
 };
